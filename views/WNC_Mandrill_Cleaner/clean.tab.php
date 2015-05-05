@@ -129,19 +129,15 @@
                 </table>
 
                 <input type="hidden" name="wnc_aiowz_tkn_update" value=""">
-                <input type="submit" id="update_mail_poet" class="button-primary"><strong>*** Will Disable <u>Checked</u> Emails from Mail Poet</strong></input>
+                <span id="clean_mandrill" class="button-primary"><strong>Clean Errors</strong></span> <strong>*** Will Disable <u>Checked</u> Emails from Mail Poet</strong></input>
 
-                <span id="search_mandrill" class="button-primary"><strong>Search for Errors</strong></span>
+
             </form>
         </section>
 
-        <div id="test_data" style="display:none;">
-            <span id="testing" class="button-primary"><strong>Yeah Girls</strong></span>
-            <div id="Nodes">
-            </div>
+    </div>
 
-        </div>
-
+    <div id="clean_results">
     </div>
 
   <?php

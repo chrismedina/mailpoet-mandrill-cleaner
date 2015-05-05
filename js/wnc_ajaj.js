@@ -9,6 +9,7 @@ jQuery("#search_mandrill").click(function() {
     if(mandrill_error_type != '' && start_date != '' && end_date != '') {
         jQuery("#example tbody").html('');
         jQuery('#search_mandrill').hide();
+        jQuery('#clean_results').hide();
         
         var data = {
             'action': 'search_action',
@@ -20,6 +21,7 @@ jQuery("#search_mandrill").click(function() {
         };
         // We can also pass the url value separately from ajaxurl for front end AJAX implementations
         jQuery.post(ajax_object.ajax_url, data, function (response) {
+
             thisSession = JSON.parse(response);
 
             //Error result?
@@ -77,7 +79,7 @@ jQuery("#test_mandrill").click(function() {
 });
 
 //Removing Emails from Mail Poet button click
-jQuery("#search_update").submit(function(e){
+jQuery("#clean_mandrill").click(function(e){
     e.preventDefault(); //prevent default form submit
 
     var r = confirm("This will disable the SELECTED emails from the Mail Poet newsletter list. Are you sure you want to do this?");
@@ -89,12 +91,12 @@ jQuery("#search_update").submit(function(e){
 
         var dataString = 'action=update_action&wnc_aiowz_tkn_update='+ oNonce + '&' + jQuery('input', oTable.fnGetNodes()).serialize();
 
-        alert(dataString);
+        //alert(dataString);
 
         jQuery.post( ajax_object.ajax_url, dataString, function(response) {
-            //alert(response);
-
-            jQuery('#data_table_result').show();
+            jQuery('#data_table_result').hide();
+            jQuery('#clean_results').show();
+            jQuery('#clean_results').html('<h2>Results:</h2>' + response);
         });
 
 

@@ -9,21 +9,6 @@
 
 class WNC_WPDB {
 
-    /*  SELECT EXAMPLE in WP
-     *             $sql = $wpdb->prepare( "SELECT * FROM $tablename
-                WHERE wnc_api_username = %s AND wnc_api_type = %s
-                AND wnc_start_date <= %s AND wnc_end_date >= %s"
-                , $api_username, $api_type, $start_date, $end_date );
-     */
-
-    /*  INSERT EXAMPLE in WP
-                  $wpdb->query( $wpdb->prepare( "INSERT INTO $tablename
-                  ( wnc_start_date, wnc_end_date, wnc_api_username, wnc_api_type )
-                  VALUES ( %s, %s, %s, %s )
-                  ", $start_date, $end_date, $username,  strtolower( $fields_result['error_type'] )
-                  ) );
- */
-
     function buildQuery ( $items ) {
         $values = array();
         global $wpdb;

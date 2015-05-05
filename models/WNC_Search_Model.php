@@ -231,6 +231,7 @@ class WNC_Search_Model{
         }
 
         $new_array = array();
+
         //iterate form submitted emails for updating and verify they were in session data
         foreach ( $form_emails as $key => $value ) {
             if( in_array( $value, $session_emails )) {
@@ -240,6 +241,8 @@ class WNC_Search_Model{
             }
         }
 
+        global $wpdb;
+
         $date = new DateTime();
 
         $wp = new WNC_WPDB;
@@ -248,10 +251,15 @@ class WNC_Search_Model{
 
         foreach ( $user_ids as $user_id )
         {
-            //echo $user_id->user_id;
-            echo $wp->update( $wpdb->prefix . 'wysija_user', 'user_id', $user_id->user_id , array('status' => '-1' ) ) . ' updated. Mail Poet user : ';
+            if($wp->update( $wpdb->prefix . 'wysija_user', 'user_id', $user_id->user_id , array('status' => '-1' ) ) > 0 ) {
 
-            $wp->update( $wpdb->prefix . 'wysija_user_list', 'user_id', $user_id->user_id , array('unsub_date' => $date->getTimestamp() ) );
+                $wp->update( $wpdb->prefix . 'wysija_user_list', 'user_id', $user_id->user_id , array('unsub_date' => $date->getTimestamp() ) );
+
+                echo '<p>User ' . $user_id->email . ' has been unsubscribed from Mail Poet. </p>';
+            } else {
+                echo "<p>User $user_id->email is already unsubscribed </p>";
+            }
+
         }
 
     }

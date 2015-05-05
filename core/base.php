@@ -78,14 +78,13 @@ require_once( dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'loader.php' );
         wp_register_style( 'custom_wp_admin_css', '/wp-content/plugins/' . WNC_PLG_FOLDER_NAME . '/css/style.css',false);
         wp_enqueue_style( 'custom_wp_admin_css' );
 
-        //wp_deregister_script ( 'jquery' );
-
-        /*wp_register_script( 'jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js", false, null );
-        wp_enqueue_script( 'jquery' );*/
-
-        wp_enqueue_script( 'ui-core' , '/wp-content/plugins/' . WNC_PLG_FOLDER_NAME .'/js/jquery.ui.core.js', false, null );
         wp_enqueue_script( 'ui-widget' , '/wp-content/plugins/' . WNC_PLG_FOLDER_NAME .'/js/jquery.ui.widget.js', false, null );
         wp_enqueue_script( 'ui-datepicker' , '/wp-content/plugins/' . WNC_PLG_FOLDER_NAME .'/js/jquery.ui.datepicker.js', false, null );
+
+        wp_enqueue_script('jquery-ui-core');
+
+        wp_register_style( 'jquery-custom-ui', '/wp-content/plugins/' . WNC_PLG_FOLDER_NAME . '/css/jquery-ui.css',false);
+        wp_enqueue_style( 'jquery-custom-ui' );
 
         //DataTable
         wp_register_style( 'custom_css_datatable', '/wp-content/plugins/' . WNC_PLG_FOLDER_NAME . '/css/jquery.dataTables.min.css',false);

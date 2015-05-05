@@ -1,6 +1,4 @@
 <?php
-    //$smtp_data = array('host'=>'', 'port' => '', 'username' => '', 'password' => '');
-
     if( !array_key_exists( 'smtp_data', $viewmodel )) {
         $viewmodel['smtp_data'] = array('host'=>'', 'port' => '', 'username' => '', 'password' => '');
     }

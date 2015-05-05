@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: MailPoet Newsletters - Mandrill Spam and Bounce Cleaner
-Plugin URI: http://www.chrismedinaphp.com/plugins/mailpoet_mandrill_cleaner.zip
+Plugin URI: http://www.chrismedinaphp.com/plugins/mailpoet-mandrill-cleaner.zip
 Description: Allows MailPoet users to easily unsubscribe or delete newsletter subscribers who have bounced, rejected, or reported you for spam. This will help keep your Mandrill reputation as high as possible by cleaning up errors. Works with MailPoet (formerly Wysija).
 Version: 1.0
 Author: Chris Medina
